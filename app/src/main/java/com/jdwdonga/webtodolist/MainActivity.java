@@ -12,8 +12,6 @@ import android.webkit.WebViewClient;
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
     private String url = "https://dongdong-todolist.netlify.app/";
-    //private String url = "https://magenta-syrniki-3487d8.netlify.app/";
-
 
 
     @Override
@@ -23,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         webView = (WebView)findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
         webView.loadUrl(url);
         webView.setWebChromeClient(new WebChromeClient());
         webView.setWebViewClient(new WebViewClientClass());
